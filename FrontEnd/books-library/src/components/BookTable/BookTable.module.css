@@ -1,0 +1,37 @@
+/* BookTable.css */
+
+/* Style the table */
+.bookTable {
+  width: 100%;
+  border-collapse: collapse;
+  outline-color: white;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+/* Style table headers */
+.bookTable th {
+  background-color: #a58a8a;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style table cells */
+.bookTable td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  align-items: center;
+}
+
+/* Style alternating row background color */
+.bookTable tr:nth-child(even) {
+  background-color: #1d1c1c;
+  align-items: center;
+}
+
+/* Hover effect on rows */
+.bookTable tr:hover {
+  background-color: #383535;
+  align-items: center;
+}

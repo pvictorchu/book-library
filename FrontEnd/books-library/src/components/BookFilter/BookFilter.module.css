@@ -1,0 +1,46 @@
+
+.formContainer {
+    display: contents;
+    grid-template-columns: 5fr 5fr;
+    gap: 10px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    width: 20%;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+    size: 100%;
+}
+
+/* Style for dropdown arrow */
+select {
+    width: 40%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+}
+
+/* Hover effect for dropdown */
+select:hover {
+    cursor: pointer;
+
+}

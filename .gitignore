@@ -1,13 +1,18 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+.vscode/
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
-
+.vs/
+Backend/Debug/
+Backend/obj/
+Backend/bin/
+Backend/BookLibrary/bin/
+Backend/BookLibrary/obj/
+**/obj/
 # testing
 /coverage
-
 # production
 /build
 
@@ -21,3 +26,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/bin/Debug
+/BackEnd/Data/bin/Debug/net8.0
+/BackEnd/Services/bin/Debug/net8.0
