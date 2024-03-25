@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using BookLibrary.Data;
 using BookLibrary.Services;
+using BookLibrary.Controllers.Middleware;
+
 var MyAllowSpecificOrigins = "LocalHostPolicy";
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,7 @@ builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 builder.Services.AddCors(options => {
     options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -27,9 +30,12 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseExceptionHandler(options => { });
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<LoggingMiddleware>();
 
 app.UseHttpsRedirection();
 

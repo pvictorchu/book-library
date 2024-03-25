@@ -55,7 +55,7 @@ namespace BookLibrary.Services
             {
                 if (!BookExists(id))
                 {
-                    throw new ArgumentNullException(nameof(id));
+                    throw new ArgumentOutOfRangeException(nameof(id));
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace BookLibrary.Services
             var book = await _context.Book.FindAsync(id);
             if (book == null)
             {
-                throw new ArgumentNullException(nameof(id));
+                throw new ArgumentOutOfRangeException(nameof(id));
             }
 
             _context.Book.Remove(book);

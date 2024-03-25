@@ -51,13 +51,9 @@ namespace BookLibrary.Controllers
             {
                 await _booksService.EditBook(id, book);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception)
             {
                 throw;
-            }
-            catch (ArgumentNullException)
-            {
-                return NotFound();
             }
 
             return NoContent();
@@ -78,9 +74,9 @@ namespace BookLibrary.Controllers
             {
                 await _booksService.DeleteBook(id);
             }
-            catch (ArgumentNullException)
+            catch (Exception)
             {
-                return NotFound();
+                throw;
             }
 
             return NoContent();
